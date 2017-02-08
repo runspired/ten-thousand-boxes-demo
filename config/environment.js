@@ -4,8 +4,8 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'ten-thousand-boxes-demo',
     environment: environment,
-    rootURL: '/',
-    locationType: 'auto',
+    rootURL: '/ten-thousand-boxes-demo/',
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
