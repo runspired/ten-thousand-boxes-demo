@@ -48,6 +48,7 @@ export default Component.extend({
   }),
 
   trackActiveBox(e) {
+    e.preventDefault();
     const box = this._activeBox;
 
     if (box) {
