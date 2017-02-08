@@ -1,0 +1,5 @@
+{{#each _boxes key="_id" as |box|}}
+  {{box-element
+    box=box
+    activateBox=(action 'onActivate' box)}}
+{{/each}}
