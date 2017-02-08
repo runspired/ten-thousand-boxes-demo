@@ -10,6 +10,7 @@ const {
 } = Ember;
 
 let guid = 0;
+let MOUSE_MOVE= 0;
 function createObject(x, y) {
   return {
     _id: guid++,
@@ -50,14 +51,17 @@ export default Component.extend({
     const box = this._activeBox;
 
     if (box) {
-      const delta = this._getMouseDelta(e.clientX, e.clientY);
+      run.join(() => {
+        MOUSE_MOVE++;
+        const delta = this._getMouseDelta(e.clientX, e.clientY);
 
-      let { x, y } = getProperties(box, 'x', 'y');
-      setProperties(box,
-        {
-          x: x + delta.dx,
-          y: y + delta.dy
-        });
+        let { x, y } = getProperties(box, 'x', 'y');
+        setProperties(box,
+          {
+            x: x + delta.dx,
+            y: y + delta.dy
+          });
+      });
     }
   },
 
